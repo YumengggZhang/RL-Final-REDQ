@@ -12,6 +12,17 @@ To setup the MoJoCo environment and related denpendencies please reffer to this 
 - experiment/train_redq_sac_reset.py for training REDQ agent and reset the parameters after 150 epochs
 
 ## Results and Plots
+The six variants are:
+- the randomized agent taking random actions at every step;
+- REDQ with 128 hidden units and 2 hidden layers trained for 100 epochs.During the evaluation, this agent follows the deterministic policy;
+- REDQ with 128 hidden units and 2 hidden layers trained for 300 epochs.During the evaluation, this agent follows the deterministic policy;
+- REDQ with 128 hidden units and 2 hidden layers trained for 300 epochs.During the evaluation, this agent has 30% probability of taking random action and following deterministic
+policy at other times;
+- REDQ with 128 hidden units and 3 hidden layers trained for 300 epochs.During the evaluation, this agent takes the best action according to its policy. This variant keeps the identical
+hidden unit number 128 but with an extra layer with more parameters;
+- REDQ with 64 hidden units and 4 hidden layers trained for 300 epochs. During the evaluation, this agent takes the best action according to its policy. This variant keeps the same
+total number of parameters but with a deeper network structure
+![readme_pic](./result.png)
 ![readme_pic](./performance.png)
 ![readme_pic](./Halfcheetah.png)
 ![readme_pic](./Hopper.png)
